@@ -104,6 +104,16 @@ radius = 2.0m
 <img src="fig/PathFollowing_B2W.gif" width=75%>
 </p>
 
+### FLORES and B2W Performance under Difference Disturbance in Simulation
+<p align ="center">
+<img src="fig/disturbance.gif" width=75%>
+</p>
+
+### Front Legs' Joint Velocity of FLORES when Traversing Obstacles in Simulation
+<p align ="center">
+<img src="fig/left_right_stairs.gif" width=75%>
+</p>
+
 ## Mechanical Parts
 All machined parts are manufactured with outsourced CNC service. The .stl file of all the parts can be found in Mechanical floder.
 
