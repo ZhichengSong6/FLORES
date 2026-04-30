@@ -82,3 +82,71 @@ sudo apt install ros-humble-ros2-controllers
 #### 1.2 Control Input
 * WASD IJKL: Move robot
 * Space: Reset Speed Input
+
+## RL Policy and HIMLoco Training
+
+We provide the trained HIM-based locomotion policy and the corresponding FLORES environment files for RL training.
+
+### Pre-trained Policy
+
+The pre-trained policy checkpoint is available at:
+
+```text
+code/Mdog/descriptions/mdog/mdog_description/config/legged_gym/May22_0943.pt
+```
+This checkpoint is trained for the FLORES wheeled-quadrupedal robot using the HIMLoco-based reinforcement learning pipeline.
+
+### Training Environment Files
+
+The FLORES environment files for HIMLoco are provided in:
+```text
+code/HIM_FLORES/
+```
+These files include:
+```text
+mdog_config.py
+mdog_robot.py
+```
+To use them, first install HIMLoco
+, then place the two files under:
+```text
+HIMLoco/legged_gym/legged_gym/envs/mdog/
+```
+The expected structure is:
+```text
+HIMLoco/
+└── legged_gym/
+    └── legged_gym/
+        └── envs/
+            └── mdog/
+                ├── mdog_config.py
+                └── mdog_robot.py
+```
+Please also place the FLORES URDF and mesh files under:
+```text
+HIMLoco/legged_gym/resources/robots/mdog/
+```
+Then register the environment in:
+```text
+HIMLoco/legged_gym/legged_gym/envs/__init__.py
+```
+by adding:
+```code
+from legged_gym.envs.mdog.mdog_config import MdogRoughCfg, MdogRoughCfgPPO
+from legged_gym.envs.mdog.mdog_robot import mDog
+
+task_registry.register("mdog", mDog, MdogRoughCfg(), MdogRoughCfgPPO())
+```
+After registration, train the policy with:
+```bash
+cd HIMLoco/legged_gym/legged_gym/scripts
+python train.py --task=mdog
+```
+For more details, please refer to:
+```text
+code/HIM_FLORES/README.md
+```
+### Notes
+The provided policy is trained for the FLORES mdog model.
+The current environment uses 16 actions corresponding to the robot joints.
+If the robot model, observation structure, or terrain sensing setup is modified, the policy and environment configuration may need to be retrained or adjusted.
