@@ -89,7 +89,11 @@ We provide the trained HIM-based locomotion policy and the corresponding FLORES 
 
 ### Pre-trained Policy
 
-The pre-trained policy checkpoint is available at:
+The pre-trained HIM-based policy checkpoint is available on Hugging Face:
+
+[szc97/FLORES-HIMLoco-Policy](https://huggingface.co/szc97/FLORES-HIMLoco-Policy)
+
+A local copy of the checkpoint is also available at:
 
 ```text
 code/Mdog/descriptions/mdog/mdog_description/config/legged_gym/May22_0943.pt
@@ -107,8 +111,7 @@ These files include:
 mdog_config.py
 mdog_robot.py
 ```
-To use them, first install HIMLoco
-, then place the two files under:
+To use them, first install HIMLoco, then place the two files under:
 ```text
 HIMLoco/legged_gym/legged_gym/envs/mdog/
 ```
@@ -147,6 +150,7 @@ For more details, please refer to:
 code/HIM_FLORES/README.md
 ```
 ### Notes
-The provided policy is trained for the FLORES mdog model.
-The current environment uses 16 actions corresponding to the robot joints.
-If the robot model, observation structure, or terrain sensing setup is modified, the policy and environment configuration may need to be retrained or adjusted.
+
+- The provided policy is trained for the FLORES `mdog` model.
+- The current environment uses 16 actions corresponding to the robot joints.
+- If the robot model, observation structure, or terrain sensing setup is modified, the policy and environment configuration may need to be retrained or adjusted.
