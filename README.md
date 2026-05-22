@@ -1,4 +1,15 @@
-# FLORES: A Reconfigured Wheel-Legged Robot for Enhanced Steering and Adaptability
+# A Reconfigured Wheel-Legged Robot for Enhanced Steering and Adaptability
+
+<p align="center">
+  <a href="https://ieeexplore.ieee.org/document/11495517">
+    <img src="https://img.shields.io/badge/IEEE%20RA--L-2026-blue">
+  </a>
+</p>
+
+<p align="center">
+  <strong>Published in IEEE Robotics and Automation Letters (RA-L), 2026.</strong><br>
+  Please cite the peer-reviewed RA-L version if this project is useful for your research.
+</p>
 <p align ="center">
 <img src="fig/dof_property.jpg" width=75%>
 </p>
